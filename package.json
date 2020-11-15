@@ -5,10 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "analyze": "ANALYZE=1 next build"
   },
   "dependencies": {
     "next": "^10.0.0",
+    "@next/bundle-analyzer": "^10.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "clsx": "^1.1.1",

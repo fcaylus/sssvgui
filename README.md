@@ -1,3 +1,5 @@
 # SSSVGUI
 
-Simple React Web App for [sssvg](https://github.com/doky-fr/sssvg)
+[Try it out !](https://svg.doky.fr)
+
+Simple React Web App for [sssvg](https://github.com/doky-fr/sssvg).
