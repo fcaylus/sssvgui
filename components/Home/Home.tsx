@@ -12,6 +12,7 @@ export default function Home(props: HomeProps) {
     const [loading, setLoading] = useState(false);
 
     const [optimizedSvg, setOptimizedSvg] = useState<string | undefined>(undefined);
+    const [optimizedSvgName, setOptimizedSvgName] = useState('');
     const [error, setError] = useState<string | undefined>(undefined);
 
     const onErrorToastClose = () => {
@@ -34,6 +35,7 @@ export default function Home(props: HomeProps) {
                 console.error(err);
                 setError(err);
             } else {
+                setOptimizedSvgName(file.name);
                 setOptimizedSvg((await res.json()).svg);
                 setError(undefined);
             }
@@ -51,7 +53,7 @@ export default function Home(props: HomeProps) {
                           loading={loading} />
             )}
             {optimizedSvg && (
-                <Result className={styles.container} svg={optimizedSvg} />
+                <Result className={styles.container} svg={optimizedSvg} svgName={optimizedSvgName} />
             )}
             {error && (<ErrorToast error={error} onClose={onErrorToastClose} />)}
             <div className={styles.credits}>🛠  Engineered @ <a href="https://doky.fr" target="_blank"> Doky</a></div>

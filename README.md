@@ -1,8 +1,10 @@
-# SSSVGUI
+# Super Slim SVGs UI (sssvgui)
 
-[Try it out !](https://svg.doky.fr)
+Try it out at [https://svg.doky.fr](https://svg.doky.fr) !
 
-Simple React Web App for [sssvg](https://github.com/doky-fr/sssvg).
+![Screenshot](screenshot.png)
+
+Simple React Web App for [sssvg](https://github.com/doky-fr/sssvg). Drop a svg file and you'll get a super slim version in exchange !
 
 ## Licence
 
