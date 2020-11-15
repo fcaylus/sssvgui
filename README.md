@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# SSSVGUI
+
+Simple React Web App for [sssvg](https://github.com/doky-fr/sssvg)
