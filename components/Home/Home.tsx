@@ -2,6 +2,7 @@ import styles from './Home.module.css';
 import Dropzone from '../Dropzone/Dropzone';
 import React, { useState } from 'react';
 import Result from '../Result/Result';
+import ErrorToast from '../ErrorToast/ErrorToast';
 
 export interface HomeProps {
 
@@ -11,6 +12,12 @@ export default function Home(props: HomeProps) {
     const [loading, setLoading] = useState(false);
 
     const [optimizedSvg, setOptimizedSvg] = useState<string | undefined>(undefined);
+    const [error, setError] = useState<string | undefined>(undefined);
+
+    const onErrorToastClose = () => {
+        setError(undefined);
+        setOptimizedSvg(undefined);
+    }
 
     const onFileAdded = (file: File) => {
         // Upload the svg file
@@ -18,18 +25,18 @@ export default function Home(props: HomeProps) {
         body.append('file', file);
 
         setLoading(true);
-
         fetch('/api/optimize', {
             method: 'POST',
             body
-        }).then((res) => {
+        }).then(async (res) => {
             if (res.status >= 300) {
-                console.error(res.text());
+                const err = await res.text();
+                console.error(err);
+                setError(err);
             } else {
-                return res.json();
+                setOptimizedSvg((await res.json()).svg);
+                setError(undefined);
             }
-        }).then((res) => {
-            setOptimizedSvg(res.svg);
         }).finally(() => {
             setLoading(false);
         });
@@ -46,6 +53,7 @@ export default function Home(props: HomeProps) {
             {optimizedSvg && (
                 <Result className={styles.container} svg={optimizedSvg} />
             )}
+            {error && (<ErrorToast error={error} onClose={onErrorToastClose} />)}
             <div className={styles.credits}>🛠  Engineered @ <a href="https://doky.fr" target="_blank"> Doky</a></div>
         </React.Fragment>
     );
