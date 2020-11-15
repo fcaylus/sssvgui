@@ -15,8 +15,8 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
         const form = new IncomingForm({});
         form
             .on('file', (name: string, file: File) => {
-                const data = fs.readFileSync(file.path);
-                optimizeSVG(file.name, data.toString('utf8'), {
+                const data = fs.readFileSync(file.path).toString('utf8');
+                optimizeSVG(file.name, data, {
                     crop: true,
                     viewBox: {
                         x: 0,
@@ -29,7 +29,8 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
                         svg: Buffer.from(optimized).toString('base64')
                     }));
                 }).catch((err) => {
-                    reject(res.status(500).send(err));
+                    console.error(err);
+                    reject(res.status(500).send(err.message !== undefined ? err.message : err));
                 });
             })
             .on('aborted', () => {
