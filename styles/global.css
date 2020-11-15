@@ -1,3 +1,9 @@
+:root {
+  --color-main1: #cedbe2;
+  --color-main2: #69818a;
+  --color-main3: #042733;
+}
+
 html,
 body {
   padding: 0;
@@ -21,7 +27,28 @@ a:hover {
   text-decoration: underline;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+.button {
+  background-color: var(--color-main3);
+  border: 1px solid var(--color-main2);
+  color: var(--color-main1);
+  border-radius: 0;
+
+  padding: 8px 16px;
+
+  cursor: pointer;
+}
+
+.button.big {
+  padding: 16px 32px;
+  font-size: 1.2em;
+}
+
+.button:hover {
+  background-color: var(--color-main2);
+  text-decoration: none;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background-color: var(--color-main2);
 }

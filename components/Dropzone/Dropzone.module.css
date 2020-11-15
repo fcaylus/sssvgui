@@ -1,0 +1,25 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fileInput {
+    display: none;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+
+    padding-bottom: 16px;
+}
+
+.uploadButton {
+
+}
+
+.loading {
+    margin-left: 16px;
+}
