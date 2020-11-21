@@ -1,7 +1,8 @@
 {
   "name": "sssvgui",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,7 +17,7 @@
     "clsx": "^1.1.1",
     "formidable": "^1.2.2",
     "formidable-serverless": "^1.0.3",
-    "sssvg": "0.0.7"
+    "sssvg": "^1.0.1"
   },
   "devDependencies": {
     "@types/formidable": "^1.0.31",
