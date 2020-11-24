@@ -5955,10 +5955,10 @@ ssri@^8.0.0:
   dependencies:
     minipass "^3.1.1"
 
-sssvg@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/sssvg/-/sssvg-1.0.1.tgz#7a48dfce43694705d84af6bb1f2d14e454a7adde"
-  integrity sha512-75U9olV+8y7Zr0p4PN9Kqiv7Zbhj58GhT77gUYDIAPqqXXXVJ7oc9Z+iNxrvqL3VVcwDwkJD6C0D8Ut/qAwMPQ==
+sssvg@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/sssvg/-/sssvg-1.1.0.tgz#45c4796d8fbd87862e652d7e444e4b558dee5c3e"
+  integrity sha512-GJclWxrm01QOjGaME14Rw4jt+DghSJG9FfbCLt/BCvgdT8S96ymolSlWUFsXuci+Hm1JxQ5CAcUBo7BeGo/RTw==
   dependencies:
     color-convert "^2.0.1"
     commander "^6.2.0"
