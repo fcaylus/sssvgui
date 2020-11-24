@@ -1,7 +1,6 @@
-import React, { Component, FunctionComponent, useRef, useState } from 'react';
+import React, { FunctionComponent, useRef, useState } from 'react';
 import styles from './Dropzone.module.css';
 import clsx from 'clsx';
-import LoadingIcon from '../LoadingIcon/LoadingIcon';
 
 export interface DropzoneInterface {
     className?: string;
@@ -59,9 +58,8 @@ const Dropzone: FunctionComponent<DropzoneInterface> = (props) => {
                 accept=".svg"
                 onChange={onFilesAdded} />
             <h1 className={styles.title}>Super Slim SVGs UI</h1>
-            <button className={clsx('button', styles.uploadButton, 'big')} onClick={openFileDialog} disabled={props.loading}>
+            <button className={clsx('button', styles.uploadButton, 'big', props.loading ? styles.loading : undefined)} onClick={openFileDialog} disabled={props.loading}>
                 Upload an SVG
-                {props.loading && <LoadingIcon className={styles.loading}/>}
             </button>
             <p>
                 ... or drop a file !
