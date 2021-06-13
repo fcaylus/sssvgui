@@ -2,14 +2,14 @@ import React, { FunctionComponent, useRef, useState } from 'react';
 import styles from './Dropzone.module.css';
 import clsx from 'clsx';
 
-export interface DropzoneInterface {
+export interface DropzoneProps {
     className?: string;
     classNameHighlight?: string;
     onFileAdded: (file: File) => void;
     loading?: boolean;
 }
 
-const Dropzone: FunctionComponent<DropzoneInterface> = (props) => {
+const Dropzone: FunctionComponent<DropzoneProps> = (props) => {
     const [highlight, setHighlight] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>();
 
